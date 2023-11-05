@@ -15,6 +15,12 @@
   margin-right: auto;
 }
 
+.cards-container {
+  overflow: hidden;
+}
+
+
+
 .catalog-container {
   display: flex;
   flex-direction: column;
@@ -24,7 +30,6 @@
   list-style-type: none;
   text-decoration: none;
   padding: 0;
-  position: absolute;
 }
 
 .catalog-container h2 {
@@ -39,6 +44,11 @@
 .watch-style {
   display: flex;
   flex-direction: column;
+}
+
+.items-catalog {
+  position: relative;
+  transition: transform 2s ease-in-out;
 }
 
 .watch-style p {
@@ -86,14 +96,70 @@
 
 /* BACK FLIP CARDS */
 
+
 .flip-card {
   overflow: hidden;
   position: relative;
+  background-color: var(--standard-green);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translateX(100%); */
+  /* transform: rotate3d(0, 1, 0, 90deg); */
+}
+
+/* .items-catalog:hover .flip-card {
+  transform: translateX(0);
+} */
+
+/* 
+.items-catalog:hover {
+  transform: rotate3d(0, 1, 0, 90deg);
+}
+
+.items-catalog:hover .flip-card {
+  transform: rotate3d(0, 1, 0, 90deg);
+} */
+
+.cards-container img {
+  transition: transform 1s ease-in-out;
+}
+
+
+.items-catalog:hover img {
+  transform: rotate3d(0, 1, 0, 90deg);
+}
+
+.items-catalog .flip-card {
+  transition: transform 1s ease-in-out;
+}
+
+.items-catalog:hover .flip-card {
+  transform: rotate3d(0, 1, 0, 90deg);
+}
+
+
+.details-flip-card {
+  padding: 0;
+}
+
+.flip-card h4 {
+  color: #fff;
+  padding-left: 20px;
+}
+
+.flip-card p {
+  color: rgba(255, 255, 255, 0.5); 
+  padding-left: 20px;
 }
 
 .details-flip-card li {
   list-style-type: none;
   text-decoration: none;
+}
+
+.details-flip-card ul {
+  padding: 0;
 }
 
 
@@ -145,4 +211,10 @@
     align-items: center;
     flex-direction: row;
   }
+
+  .cards-container {
+    width: 250px;
+  }
+
+  
 }
